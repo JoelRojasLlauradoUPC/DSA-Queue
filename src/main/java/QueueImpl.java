@@ -18,17 +18,29 @@ public class QueueImpl<E> implements Queue<E>{
 
     public E pop() throws EmptyQueueException {
         // TO-DO
-        return null;
+        if (isEmpty()) throw new EmptyQueueException();
+        this.p--;
+        int i = 1;
+        while(i<this.p)
+        {
+            this.data[i--]=this.data[i];
+            i++;
+        }
+        return this.data[0];
     }
 
     private boolean isFull() {
         // TO-DO
-        return false;
+        boolean fullQueue = false;
+        if(this.p==this.data.length) fullQueue = true;
+        return fullQueue;
     }
 
     private boolean isEmpty() {
         // TO-DO
-        return false;
+        boolean emptyQueue = false;
+        if(this.p<this.data.length) emptyQueue = true;
+        return emptyQueue;
     }
 
     public int size() {
