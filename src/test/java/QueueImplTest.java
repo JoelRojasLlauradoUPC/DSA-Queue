@@ -47,7 +47,7 @@ public class QueueImplTest {
         Assert.assertEquals(5, this.q.size());
     }
 
-/*
+
     @Test
     public void testPop1() throws Exception {
         Assert.assertEquals(3, this.q.size());
@@ -82,7 +82,7 @@ public class QueueImplTest {
         String quatre = this.q.pop();
     }
 
-*/
+
 
 
 }

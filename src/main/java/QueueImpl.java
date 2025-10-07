@@ -28,8 +28,8 @@ public class QueueImpl<E> implements Queue<E> {
         this.p--;
 
         int i = 1;
-        while (i < this.p) {
-            this.data[i--] = this.data[i];
+        while (i <= this.p) {
+            this.data[i-1] = this.data[i];
             i++;
         }
     }
@@ -41,7 +41,8 @@ public class QueueImpl<E> implements Queue<E> {
 
     private boolean isEmpty() {
         // TO-DO
-        return this.p < this.data.length;
+        return this.p == 0 ;
+
     }
 
     public int size() {
